@@ -29,9 +29,12 @@ jobs:
       with:
         gradle-version: '8.2'
 
-    - name: Setup local.properties
+    - name: Setup Configuration Properties
       run: |
         echo "sdk.dir=$ANDROID_HOME" > local.properties
+        echo "android.useAndroidX=true" > gradle.properties
+        echo "android.enableJetifier=true" >> gradle.properties
+        echo "org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8" >> gradle.properties
 
     - name: Build Debug APK
       run: |
