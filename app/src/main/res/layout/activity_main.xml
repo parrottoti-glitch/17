@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#020617">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="اتوکلیکر هوشمند اندروید ۱۰"
+            android:textColor="#38BDF8"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- نمایش ساعت ۲۴ ساعته با میلی‌ثانیه -->
+        <TextView
+            android:id="@+id/tvCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ساعت دقیق: 00:00:00.000"
+            android:textColor="#F8FAFC"
+            android:textSize="18sp"
+            android:fontFamily="monospace"
+            android:background="#0F172A"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- کارت تنظیم تعداد کلیک‌های مورد نظر -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#0F172A"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تنظیم تعداد کلیک‌های مورد نظر:"
+                android:textColor="#38BDF8"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/etCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="تعداد کلیک (مثلاً 40، 100 یا 0 برای نامحدود)"
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#64748B"
+                android:textSize="18sp"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:background="#1E293B"
+                android:padding="10dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- دکمه‌های سریع تعداد کلیک -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnPreset40"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="۴۰ کلیک"
+                    android:textSize="11sp"
+                    android:backgroundTint="#334155" />
+
+                <Button
+                    android:id="@+id/btnPreset100"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="۱۰۰ کلیک"
+                    android:textSize="11sp"
+                    android:backgroundTint="#334155"
+                    android:layout_marginHorizontal="4dp" />
+
+                <Button
+                    android:id="@+id/btnPreset500"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="۵۰۰ کلیک"
+                    android:textSize="11sp"
+                    android:backgroundTint="#334155"
+                    android:layout_marginEnd="4dp" />
+
+                <Button
+                    android:id="@+id/btnPresetUnlimited"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="نامحدود"
+                    android:textSize="11sp"
+                    android:backgroundTint="#334155" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- کارت تنظیم ساعت شروع دقیق (۲۴ ساعته + میلی‌ثانیه) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#0F172A"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ساعت شروع دقیق (۲۴ ساعته شامل میلی‌ثانیه):"
+                android:textColor="#94A3B8"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/etHour"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="ساعت"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"
+                    android:background="#1E293B"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:paddingHorizontal="4dp" />
+
+                <EditText
+                    android:id="@+id/etMinute"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="دقیقه"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"
+                    android:background="#1E293B"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:paddingHorizontal="4dp" />
+
+                <EditText
+                    android:id="@+id/etSecond"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="ثانیه"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"
+                    android:background="#1E293B"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="."
+                    android:textColor="#10B981"
+                    android:textSize="20sp"
+                    android:paddingHorizontal="4dp" />
+
+                <EditText
+                    android:id="@+id/etMillis"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="میلی‌ثانیه"
+                    android:inputType="number"
+                    android:textColor="#10B981"
+                    android:gravity="center"
+                    android:background="#1E293B"
+                    android:padding="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- فاصله کلیک‌ها -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#0F172A"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="فاصله کلیک‌ها (حداقل ۴۰ کلیک در ثانیه = ۲۵ میلی‌ثانیه):"
+                android:textColor="#94A3B8"
+                android:textSize="14sp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/etInterval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:background="#1E293B"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- نقطه ثابت صفحه -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#0F172A"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="مختصات نقطه ثابت هدف (X, Y):"
+                android:textColor="#94A3B8"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etCoordX"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="مختصات X"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:background="#1E293B"
+                    android:padding="8dp"
+                    android:layout_marginEnd="6dp" />
+
+                <EditText
+                    android:id="@+id/etCoordY"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="مختصات Y"
+                    android:inputType="number"
+                    android:textColor="#FFFFFF"
+                    android:background="#1E293B"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnShowTarget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="نمایش نشانه‌گیر شناور روی صفحه"
+                android:backgroundTint="#0284C7"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+        <!-- دکمه تست عملکرد آزمایشی کلیک‌ها -->
+        <Button
+            android:id="@+id/btnTestMode"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="حالت تست آزمایشی عملکرد کلیک‌ها (۵ کلیک آزمایشی)"
+            android:backgroundTint="#F59E0B"
+            android:textColor="#020617"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <!-- دکمه‌های شروع و توقف اصلی -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="شروع اتوکلیکر"
+                android:backgroundTint="#10B981"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="توقف"
+                android:backgroundTint="#EF4444"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- وضعیت زنده -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="وضعیت: آماده به کار"
+            android:textColor="#38BDF8"
+            android:gravity="center"
+            android:padding="12dp"
+            android:background="#0F172A"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</ScrollView>
